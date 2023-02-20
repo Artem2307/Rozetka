@@ -35,7 +35,7 @@ public class BaseTest {
     @After
     @Step("Close URL")
     public void tearDown(){
-        Selenide.closeWindow();
+        Selenide.close();
         System.out.println("Finish");
     }
 
