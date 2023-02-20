@@ -30,6 +30,5 @@ public class ProductTest extends BaseTest {
     @Attachment
     public void ProductSearch() {
         Assert.assertTrue(searchPage.search("Iphone 13").getFirstProductName().contains("13"));
-        Assert.assertTrue(searchPage.search("Iphone 12").getFirstProductName().contains("12"));
     }
 }

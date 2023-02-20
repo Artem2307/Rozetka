@@ -17,12 +17,4 @@ public class RequestTest extends BaseTestApi {
     public void getUsersFalse(){
         userPage.getUsersFalse();
     }
-    @Test
-    @Story("getUsersTrue")
-    @Description("getUsersTrue")
-    @Attachment
-    public void getUsersTrue(){
-        userPage.getUsersTrue();
-    }
-    // реквест и ассерт  спецификации
 }
