@@ -4,7 +4,6 @@ package UITests;
 
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.qameta.allure.*;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
