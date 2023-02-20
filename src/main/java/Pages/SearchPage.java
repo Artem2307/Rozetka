@@ -25,7 +25,7 @@ public class SearchPage {
         textBoxinput.pressEnter();
         textBoxinput.should(Condition.visible);
         return this;
-    }
+     }
 
     @Step("clickProduct")
     public SearchPage clickProduct(String name){
