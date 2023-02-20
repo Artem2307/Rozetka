@@ -19,7 +19,7 @@ public class ProductTest extends BaseTest {
     @Attachment
     public void BuyProduct(){
         searchPage.search("Iphone 13")
-                .clickProduct("Мобільний телефон Apple iPhone 13 128GB Starlight");
+                .clickProduct("Apple iPhone 13 128GB Starlight");
         productPage.clickBuyButton(" Купити ")
                 .modalVisibiliti();
     }
