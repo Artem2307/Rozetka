@@ -18,7 +18,7 @@
         <maven-surefire-plugin.version>3.0.0-M9</maven-surefire-plugin.version>
         <aspectj.version>1.9.9.1</aspectj.version>
         <allure-maven.version>2.11.2</allure-maven.version>
-        <selenide.version>6.11.2</selenide.version>
+        <selenide.version>5.2.2</selenide.version>
         <slf4j.version>2.0.6</slf4j.version>
         <guava.version>31.0.1-jre</guava.version>
         <lombok.version>1.18.26</lombok.version>
