@@ -20,7 +20,7 @@ public class ProductTest extends BaseTest {
     public void BuyProduct(){
         searchPage.search("Iphone 13")
                 .clickProduct("Apple iPhone 13 128GB Starlight");
-        productPage.clickBuyButton(" Купити ")
+        productPage.clickBuyButton()
                 .modalVisibiliti();
     }
 
