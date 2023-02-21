@@ -18,8 +18,8 @@ public class ProductTest extends BaseTest {
     @Description("BuyProduct")
     @Attachment
     public void BuyProduct(){
-        searchPage.search("Iphone 13")
-                .clickProduct("Apple iPhone 13 128GB Starlight");
+        searchPage.search("Iphone")
+                .clickProduct("iPhone");
         productPage.clickBuyButton()
                 .modalVisibiliti();
     }
