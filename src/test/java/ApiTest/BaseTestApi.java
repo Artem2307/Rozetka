@@ -4,9 +4,10 @@ import ApiUsers.UserData;
 import Settings.RestAssuredSetting;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.junit.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 
 import java.util.List;
@@ -20,10 +21,17 @@ public class BaseTestApi extends RestAssuredSetting {
     }
 
     @Test
+    @Story("Registration")
+    @Description("Registration")
+    @Attachment
+    public void checkUsersAndIdTest(){
+        checkUsersAndIdStep();
+    }
+    @Step
     @Story("checkUsersAndIdTest")
     @Description("checkUsersAndIdTest")
     @Attachment
-    public void checkUsersAndIdTest(){
+    public void checkUsersAndIdStep(){
         List<UserData> users = given()
                 .spec(requestSpecification)
                 .when()
