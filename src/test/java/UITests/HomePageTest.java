@@ -33,44 +33,5 @@ public class HomePageTest extends BaseTest {
         Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
     }
 
-    @Test
-    @Story("Login")
-    @Description("Login Negative")
-    @Attachment
-    public void ProfileLoginNegative1(){
-        homePageElements.profileLogin("380666666888","123456");
-        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
-    }
-
-    @Test
-    @Story("Login")
-    @Description("Login Negative")
-    @Attachment
-    public void ProfileLoginNegative2(){
-        homePageElements.profileLogin("380666666888","123456");
-        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
-    }
-
-    @Test
-    @Story("Login")
-    @Description("Login Negative")
-    @Attachment
-    public void ProfileLoginNegative3(){
-        homePageElements.profileLogin("380666666888","123456");
-        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
-    }
-
-
-    @Test
-    @Story("Login")
-    @Description("Login Negative")
-    @Attachment
-    public void ProfileLoginNegative14(){
-        homePageElements.profileLogin("380666666888","123456");
-        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
-    }
-
-    // как работать с хистори аллур (енв проперти)
-
 
 }
