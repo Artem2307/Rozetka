@@ -8,6 +8,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 
 import java.util.List;
@@ -15,17 +17,16 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
-@DisplayName("API")
-@ExtendWith(TextReportExtension.class)
-@Feature("API")
-public class BaseTestApi extends RestAssuredSetting {
-    @Before
-    public void BeforeTestApi(){
-    }
 
+@RunWith(JUnit4.class)
+@ExtendWith(TextReportExtension.class)
+@DisplayName("getUsersFalse")
+@Feature("getUsersFalse")
+
+public class BaseTestApi extends RestAssuredSetting {
     @Test
-    @Story("Registration")
-    @Description("Registration")
+    @Story("getUsersFalse")
+    @Description("getUsersFalse")
     @Attachment
     public void checkUsersAndIdTest(){
         checkUsersAndIdStep();
