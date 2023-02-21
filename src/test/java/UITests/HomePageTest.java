@@ -4,6 +4,7 @@ package UITests;
 
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.qameta.allure.*;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +30,44 @@ public class HomePageTest extends BaseTest {
     @Attachment
     public void ProfileLoginNegative(){
         homePageElements.profileLogin("380666666888","123456");
-        //Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
+        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
+    }
+
+    @Test
+    @Story("Login")
+    @Description("Login Negative")
+    @Attachment
+    public void ProfileLoginNegative1(){
+        homePageElements.profileLogin("380666666888","123456");
+        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
+    }
+
+    @Test
+    @Story("Login")
+    @Description("Login Negative")
+    @Attachment
+    public void ProfileLoginNegative2(){
+        homePageElements.profileLogin("380666666888","123456");
+        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
+    }
+
+    @Test
+    @Story("Login")
+    @Description("Login Negative")
+    @Attachment
+    public void ProfileLoginNegative3(){
+        homePageElements.profileLogin("380666666888","123456");
+        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
+    }
+
+
+    @Test
+    @Story("Login")
+    @Description("Login Negative")
+    @Attachment
+    public void ProfileLoginNegative14(){
+        homePageElements.profileLogin("380666666888","123456");
+        Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
     }
 
     // как работать с хистори аллур (енв проперти)
