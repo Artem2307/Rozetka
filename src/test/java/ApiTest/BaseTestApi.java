@@ -2,6 +2,9 @@ package ApiTest;
 
 import ApiUsers.UserData;
 import Settings.RestAssuredSetting;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Description;
+import io.qameta.allure.Story;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +20,9 @@ public class BaseTestApi extends RestAssuredSetting {
     }
 
     @Test
+    @Story("checkUsersAndIdTest")
+    @Description("checkUsersAndIdTest")
+    @Attachment
     public void checkUsersAndIdTest(){
         List<UserData> users = given()
                 .spec(requestSpecification)
