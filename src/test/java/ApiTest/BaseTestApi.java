@@ -2,12 +2,12 @@ package ApiTest;
 
 import ApiUsers.UserData;
 import Settings.RestAssuredSetting;
-import io.qameta.allure.Attachment;
-import io.qameta.allure.Description;
-import io.qameta.allure.Step;
-import io.qameta.allure.Story;
+import com.codeborne.selenide.junit5.TextReportExtension;
+import io.qameta.allure.*;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.extension.ExtendWith;
 
 
 import java.util.List;
@@ -15,6 +15,9 @@ import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
+@DisplayName("API")
+@ExtendWith(TextReportExtension.class)
+@Feature("API")
 public class BaseTestApi extends RestAssuredSetting {
     @Before
     public void BeforeTestApi(){
@@ -28,9 +31,6 @@ public class BaseTestApi extends RestAssuredSetting {
         checkUsersAndIdStep();
     }
     @Step
-    @Story("checkUsersAndIdTest")
-    @Description("checkUsersAndIdTest")
-    @Attachment
     public void checkUsersAndIdStep(){
         List<UserData> users = given()
                 .spec(requestSpecification)
