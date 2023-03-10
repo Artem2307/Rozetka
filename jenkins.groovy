@@ -23,7 +23,7 @@ node {
             stage("Run tests") {
                 parallel(
                         'Api Tests': {
-                            runTestWithTag("ApiTest")
+                            runTestWithTag("BaseTestApi")
                         },
                        'Ui Tests': {
                             runTestWithTag("UITests")
