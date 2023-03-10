@@ -4,6 +4,7 @@ import ApiUsers.UserData;
 import Settings.RestAssuredSetting;
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.qameta.allure.*;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -47,15 +48,14 @@ public class BaseTestApi extends RestAssuredSetting {
 
     @Test
     public void RegistrationUser(){
-        String exprctionBody = "50";
         String requestBody = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pisto\"}";
         Response response = given()
                 .spec(requestSpecification)
                 .body(requestBody)
                 .when()
                 .post("/api/users");
-        response.then().statusCode(201);
-        response.getBody().jsonPath().getString("id");
+        response.then().statusCode(201).log().all()
+                .extract().body().jsonPath().getList("first_name",UserData.class);
     }
 
     @Test
@@ -68,16 +68,14 @@ public class BaseTestApi extends RestAssuredSetting {
                 .when()
                 .put("/api/users/2");
 
-        response.then().statusCode(200);
-        // Проверяем, что в ответе содержится ожидаемый текст
-        response.getBody().jsonPath().getString("id");
+        response.then().statusCode(200).log().all()
+                .extract().body().jsonPath().getList("first_name",UserData.class);
     }
 
     @Test
     public void testUserDelete() {
         String requestBody = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pisto\"}";
         LocalDateTime now = LocalDateTime.now();
-        String formattedDateTime = now.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
         Response response = given()
                 .spec(requestSpecification)
                 .body(requestBody)
@@ -85,8 +83,5 @@ public class BaseTestApi extends RestAssuredSetting {
                 .delete("/api/users/2");
 
         response.then().statusCode(204);
-        response.header("updatedAt");
-        response.getBody().jsonPath().getString("updatedAt").equals(now);
-
     }
 }

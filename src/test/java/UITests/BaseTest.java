@@ -26,8 +26,6 @@ public class BaseTest {
     @Step("Open URL")
     public  void setUp() {
         selenidSetting.setting();
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true)
-                .savePageSource(true));
     }
 
 

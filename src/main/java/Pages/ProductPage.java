@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class ProductPage {
-    public String BUY_BUTTON = "//button[contains(@class,'buy-button button button--with-icon button--green button--medium ng-star-inserted')]";
+    public String BUY_BUTTON = "//button[contains(@class,'buy-button button button--with-icon button--green button--medium buy-button--tile ng-star-inserted')]";
     public String MODAL_CONTENT ="//div[contains(@class,'modal__content')]";
 
     @Step("clickBuyButton")
