@@ -20,13 +20,23 @@ node {
         }
 
         try {
-            parallel getTestStages(["BaseTestApi", "HomePageTest"])
-        } finally {
-            stage ("Allure") {
+            stage("Run tests") {
+                parallel(
+                        'Api Tests': {
+                            runTestWithTag("ApiTest")
+                        },
+                       'Ui Tests': {
+                            runTestWithTag("UITests")
+                        }
+                )
+           }
+       } finally {
+            stage("Allure") {
                 generateAllure()
-            }
+           }
         }
-    }
+
+        }
 }
 
 
