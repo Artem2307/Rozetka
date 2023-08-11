@@ -129,4 +129,20 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>proxy-profile</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <http.proxyHost>196.20.125.157</http.proxyHost>
+                <http.proxyPort>8083</http.proxyPort>
+                <https.proxyHost>196.20.125.157</https.proxyHost>
+                <https.proxyPort>8083</https.proxyPort>
+            </properties>
+        </profile>
+    </profiles>
+
+
 </project>

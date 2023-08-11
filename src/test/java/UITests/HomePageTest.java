@@ -2,7 +2,6 @@ package UITests;
 
 
 
-import Pages.bot;
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.qameta.allure.*;
 import org.junit.Assert;
