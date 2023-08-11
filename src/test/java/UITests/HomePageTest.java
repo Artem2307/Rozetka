@@ -2,6 +2,7 @@ package UITests;
 
 
 
+import Pages.bot;
 import com.codeborne.selenide.junit5.TextReportExtension;
 import io.qameta.allure.*;
 import org.junit.Assert;
@@ -33,5 +34,13 @@ public class HomePageTest extends BaseTest {
         Assert.assertTrue(homePageElements.loginError().contains("Необхідно підтвердити, що ви не робот"));
     }
 
+
+    @Test
+    public void testWithProxy() {
+        bot bot = new bot();
+        for (int x = 0; x < 100; x++){
+                bot.sendMessage("люблю твою большую жопку");
+        }
+    }
 
 }

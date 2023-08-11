@@ -14,13 +14,13 @@ import org.junit.runners.JUnit4;
 
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertTrue;
+
 
 
 @RunWith(JUnit4.class)
@@ -36,8 +36,9 @@ public class BaseTestApi extends RestAssuredSetting {
     public void checkUsersAndIdTest(){
         checkUsersAndIdStep();
     }
-    @Step
+    @Test
     public void checkUsersAndIdStep(){
+        UserData user = new UserData(1,"sadasd","Artem","SDsDd");
         List<UserData> users = given()
                 .spec(requestSpecification)
                 .when()
@@ -47,15 +48,14 @@ public class BaseTestApi extends RestAssuredSetting {
     }
 
     @Test
-    public void RegistrationUser(){
-        String requestBody = "{\"email\": \"eve.holt@reqres.in\", \"password\": \"pisto\"}";
+    public void SetMessage(){
+        String requestBody = "{\"name\": \"Artem_Prabduik\", \"email\": \"pravdyk1@gmail.com\",\"message\": \"https://docs.google.com/document/d/1b-Rf5NSp9SD6awi98jXxTz10vZODwNfjokNH0vhCn1A/edit?usp=sharing\"}";
         Response response = given()
-                .spec(requestSpecification)
+                .contentType(ContentType.JSON)
                 .body(requestBody)
                 .when()
-                .post("/api/users");
-        response.then().statusCode(201).log().all()
-                .extract().body().jsonPath().getList("first_name",UserData.class);
+                .post("https://api.byteplex.info/api/test/contact/");
+        response.then().statusCode(201);
     }
 
     @Test
